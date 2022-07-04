@@ -1,0 +1,15 @@
+package com.varxyz.jv251.service;
+
+import com.varxyz.jv251.dao.AccountDao;
+
+public class Accountservice {
+	private AccountDao accountDao;
+	
+	public void addAccount(Account account) {
+		accountDao.addAccount(account);
+	}
+	public String generateAccountNum() {
+		return null;
+	}
+	
+}

@@ -1,0 +1,6 @@
+package com.varxyz.jv251.service;
+
+public class BankService {
+	public static final char SA = 'S';
+	public static final char CA = 'C';
+}

@@ -1,0 +1,5 @@
+package com.varxyz.jv251.service;
+
+public class DuplicatedEntityException extends Exception {
+
+}

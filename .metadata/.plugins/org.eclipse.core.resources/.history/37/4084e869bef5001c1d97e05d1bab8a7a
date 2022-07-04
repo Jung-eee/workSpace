@@ -1,0 +1,69 @@
+package com.varxyz.jv251.service;
+
+import java.util.List;
+
+import com.varxyz.jv251.dao.AccountDao;
+import com.varxyz.jv251.dao.CustomerDao;
+import com.varxyz.jv251.domain.Customer;
+import com.varxyz.jv251.domain.SavingAccount;
+import com.varxyz.jv251.exception.CustomerNotFoundException;
+
+public class BankService {
+	private static final BankService service = new BankService();
+	public static final char SA = 'S';
+	public static final char CA = 'C';
+	
+	public static final double DEFAULT_INTEREST_RATE = 0.03;
+	public static final double DEFAULT_OVERDRAFT_AMOUNT = 1000.0;
+	
+	public CustomerService customerService;
+	private Accountservice accountService;
+	
+	public BankService() {
+		init();
+	}
+	public void init() {
+		customerService = new CustomerService(new CustomerDao());
+		accountService = new Accountservice(new AccountDao());
+	}
+	public static Bankservice getInstance() {
+		return service;
+	}
+	public void addCustomer(String name,String ssn, String phone, String userId, String passwd) {
+		if(!isCustomer(ssn)) {
+			customerService.addCustomer(customerService.creatCustomer(name, ssn, phone, userId, passwd));
+		}
+		throw new DuplicatedEntityException(ssn + "is duplicated");
+	}
+	public Customer getCustomerbySsn(String ssn) {
+		return customerService.getCustomerBySsn(ssn);
+	}
+	public List<Customer> getAllCustomers() {
+		return customerService.getAllcustomer();
+	}
+	public void addSavingsAccount(long balance, double interestRate, String ssn) {
+		SavingAccount account = new SavingAccount();
+		account.setAccountNum(accountService.gennerateAccountNum());
+		account.setAccountType(BankService.SA);
+		account.setInterestRate(interestRate);
+		Customer customer = customerService.getCustomerBySsn(ssn);
+		if(customer != null) {
+			account.setCustomer(customer);
+		}
+		else {
+			throw new CustomerNotFoundException(ssn + "not found");
+		}
+	}
+	public void addCheckingAccount(long balance, double overdraftAmount, ) {
+		
+	}
+	public Customer getCustomerbySsn(String ssn) {
+		return customerService.getCustomerBySsn(ssn);
+	}
+	public List<Customer> getAllCustomers() {
+		return customerService.getAllcustomer();
+	}
+	public boolean isCustomer(String ssn)  {
+		return customerService.getCustomerBySsn(ssn) == null ? false : true;
+	}
+} 

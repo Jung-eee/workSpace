@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action=""> <!-- action : 폼을 전송할 서버 쪽 스크립트 파일을 지정 -->
+
+</form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+package com.varxyz.jv251.service;
+
+public class BankServiceTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

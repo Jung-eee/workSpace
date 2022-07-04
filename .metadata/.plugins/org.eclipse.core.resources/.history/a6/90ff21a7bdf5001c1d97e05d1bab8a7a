@@ -1,0 +1,5 @@
+package com.varxyz.jv251.exception;
+
+public class EntityNotFoundException {
+
+}

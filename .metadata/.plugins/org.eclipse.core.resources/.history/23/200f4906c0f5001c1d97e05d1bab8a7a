@@ -1,0 +1,17 @@
+package com.varxyz.jv251.service;
+
+public class BankServiceTest {
+
+	public static void main(String[] args) {
+		BankService servive = BankService.getInstance();
+		String name = "이준호";
+		String ssn = "900125-1234567";
+		String phone = "010-1258-9720";
+		String userId = "jhking";
+		String passwd = "0125";
+		service.addCustomer(name, ssn, phone, userId, passwd);
+		
+
+	}
+
+}

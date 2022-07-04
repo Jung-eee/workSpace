@@ -1,0 +1,32 @@
+package com.varxyz.jv251.service;
+
+public class BankService {
+	private static final BankService service = new BankService();
+	public static final char SA = 'S';
+	public static final char CA = 'C';
+	
+	public static final double DEFAULT_INTEREST_RATE = 0.03;
+	public static final double DEFAULT_OVERDRAFT_AMOUNT = 1000.0;
+	
+	public CustomerService customerService;
+	private AccountService accountService;
+	
+	public BankService() {
+		init();
+	}
+	public void init() {
+		customerService = new CustomerService(new CustomerDao());
+		accoutService = new AccountService(new AccountDao());
+	}
+	public static Bankservice getInstance() {
+		return service;
+	}
+	public void addCustomer(String name,String ssn, String phone, String userId, String passwd) {
+		if(!isCustomer(ssn)) {
+			
+		}
+	}
+	public boolean isCustomer(String ssn) {
+		return customerService(e.getCustomerBySsn(ssn) == null ? false : true;
+	}
+} 

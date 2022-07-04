@@ -1,0 +1,11 @@
+package com.varxyz.jv251.service;
+
+import com.varxyz.jv251.dao.CustomerDao;
+import com.varxyz.jv251.domain.Customer;
+
+public class CustomerService {
+	private CustomerDao cusomerDao;
+	public Customer creatCustomer(String name, String ssn, String phone, String userId, String passwd) {
+		new Customer(name, ssn, phone, userId, passwd);
+	}
+}
